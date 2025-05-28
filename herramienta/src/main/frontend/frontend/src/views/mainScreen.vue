@@ -8,7 +8,7 @@
         <input v-model="filtro" id="categoria" type="text" placeholder="Herramientas" />
         <button id="buttonherramienta" @click="cargarHerramientas">Buscar</button>
 
-        <a id="redireccion" href="https://prueba-pink-delta.vercel.app/admin">
+        <a id="redireccion" href="http://localhost:5173/admin">
           <div class="iconheader">
             <button id="login">Iniciar Sesión</button>
           </div>
@@ -190,10 +190,11 @@ function anteriorPagina() {
   if (paginaActual.value > 1) paginaActual.value--
 }
 
+const apiUrl = import.meta.env.VITE_API_URL
 
 // Cargar herramientas desde el backend
 async function cargarHerramientas() {
-  let url = 'http://localhost:8080/tools'
+  let url = `${apiUrl}/tools`
 
   try {
     // Si hay filtro por nombre
@@ -223,7 +224,7 @@ async function cargarHerramientas() {
 // Cargar categorías
 async function cargarCategorias() {
   try {
-    const res = await fetch('http://localhost:8080/api/categorias')
+    const res = await fetch(`${apiUrl}/api/categorias`)
     categorias.value = await res.json()
   } catch (error) {
     console.error('Error al cargar categorías:', error)
