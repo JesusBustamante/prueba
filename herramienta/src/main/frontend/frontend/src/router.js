@@ -8,9 +8,7 @@ const routes = [
   { path: '/admin', component: AdminView }
 ]
 
-const router = createRouter({
+export const router = createRouter({
   history: createWebHistory(),
   routes
 })
-
-export default router
