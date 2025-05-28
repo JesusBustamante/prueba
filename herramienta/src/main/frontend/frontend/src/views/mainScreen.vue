@@ -3,7 +3,7 @@
     <div class="main-screen">
       <div class="header">
 
-        <a href="http://localhost:5173/"><img id="logo" src="/src/assets/header/LogoSinFondo.png" alt="Logo" /></a>
+        <a href="https://prueba-pink-delta.vercel.app/admin"><img id="logo" src="/src/assets/header/LogoSinFondo.png" alt="Logo" /></a>
 
         <input v-model="filtro" id="categoria" type="text" placeholder="Herramientas" />
         <button id="buttonherramienta" @click="cargarHerramientas">Buscar</button>
